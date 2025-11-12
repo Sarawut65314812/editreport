@@ -614,7 +614,16 @@ button { cursor:pointer; }
 /* Adjust white box alignment inside red/green panels for landscape */
 @media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
   .main-container > div[style*="display:flex"] > div .file-input-wrapper {
-    margin-left: 10% !important; /* Shift white box 10% to the left */
+    margin-left: auto !important; /* Reset left margin */
+    margin-right: 20% !important; /* Shift white box 20% to the right */
+  }
+}
+
+/* Reduce white box width inside red/green panels for portrait */
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: portrait) {
+  .main-container > div[style*="display:flex"] > div .file-input-wrapper {
+    max-width: 60% !important; /* Reduce width to 60% (40% reduction) */
+    margin: 0 auto !important; /* Center the box */
   }
 }
 </style>
